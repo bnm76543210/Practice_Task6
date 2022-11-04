@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\marat\Documents\Car_Inspection\Car_Inspection\Model1.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\marat\Documents\Practice_Task6\Car_Inspection\Car_Inspection\Model1.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

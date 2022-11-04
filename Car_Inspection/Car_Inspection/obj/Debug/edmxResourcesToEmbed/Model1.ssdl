@@ -6,10 +6,10 @@
     </Key>
     <Property Name="Car_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="State_number" Type="nvarchar" MaxLength="9" Nullable="false" />
-    <Property Name="Engine_number" Type="nchar" MaxLength="30" Nullable="false" />
-    <Property Name="Color" Type="nchar" MaxLength="50" Nullable="false" />
-    <Property Name="Brand" Type="nchar" MaxLength="50" Nullable="false" />
-    <Property Name="Number_of_passport" Type="nchar" MaxLength="25" Nullable="false" />
+    <Property Name="Engine_number" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Number_of_passport" Type="nvarchar" MaxLength="25" Nullable="false" />
     <Property Name="OwnerID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Inspection">
@@ -20,27 +20,27 @@
     <Property Name="CarID" Type="int" Nullable="false" />
     <Property Name="OfficerID" Type="int" Nullable="false" />
     <Property Name="Inspection_date" Type="datetime" Nullable="false" />
-    <Property Name="Result" Type="nchar" MaxLength="250" Nullable="false" />
+    <Property Name="Result" Type="nvarchar" MaxLength="250" Nullable="false" />
   </EntityType>
   <EntityType Name="Owner">
     <Key>
       <PropertyRef Name="Owner_id" />
     </Key>
     <Property Name="Owner_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="License_number" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="FIO" Type="nchar" MaxLength="75" Nullable="false" />
-    <Property Name="Adress" Type="nchar" MaxLength="75" Nullable="false" />
+    <Property Name="License_number" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="FIO" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="75" Nullable="false" />
     <Property Name="Birth_date" Type="datetime" Nullable="false" />
-    <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="PoliceOfficer">
     <Key>
       <PropertyRef Name="Officer_id" />
     </Key>
     <Property Name="Officer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FIO" Type="nchar" MaxLength="75" Nullable="false" />
-    <Property Name="Post" Type="nchar" MaxLength="50" Nullable="false" />
-    <Property Name="Rank" Type="nchar" MaxLength="25" Nullable="false" />
+    <Property Name="FIO" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="Post" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rank" Type="nvarchar" MaxLength="25" Nullable="false" />
   </EntityType>
   <Association Name="FK_Car_Owner">
     <End Role="Owner" Type="Self.Owner" Multiplicity="1" />

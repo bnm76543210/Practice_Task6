@@ -4,17 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Car_InspectionModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Car_InspectionModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Car">
           <Key>
             <PropertyRef Name="Car_id" />
           </Key>
           <Property Name="Car_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="State_number" Type="nvarchar" MaxLength="9" Nullable="false" />
-          <Property Name="Engine_number" Type="nchar" MaxLength="30" Nullable="false" />
-          <Property Name="Color" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Brand" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Number_of_passport" Type="nchar" MaxLength="25" Nullable="false" />
+          <Property Name="Engine_number" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Number_of_passport" Type="nvarchar" MaxLength="25" Nullable="false" />
           <Property Name="OwnerID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Inspection">
@@ -25,27 +25,27 @@
           <Property Name="CarID" Type="int" Nullable="false" />
           <Property Name="OfficerID" Type="int" Nullable="false" />
           <Property Name="Inspection_date" Type="datetime" Nullable="false" />
-          <Property Name="Result" Type="nchar" MaxLength="250" Nullable="false" />
+          <Property Name="Result" Type="nvarchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <EntityType Name="Owner">
           <Key>
             <PropertyRef Name="Owner_id" />
           </Key>
           <Property Name="Owner_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="License_number" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="FIO" Type="nchar" MaxLength="75" Nullable="false" />
-          <Property Name="Adress" Type="nchar" MaxLength="75" Nullable="false" />
+          <Property Name="License_number" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="75" Nullable="false" />
           <Property Name="Birth_date" Type="datetime" Nullable="false" />
-          <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="PoliceOfficer">
           <Key>
             <PropertyRef Name="Officer_id" />
           </Key>
           <Property Name="Officer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FIO" Type="nchar" MaxLength="75" Nullable="false" />
-          <Property Name="Post" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="Rank" Type="nchar" MaxLength="25" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Post" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rank" Type="nvarchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <Association Name="FK_Car_Owner">
           <End Role="Owner" Type="Self.Owner" Multiplicity="1" />
@@ -101,8 +101,7 @@
             <End Role="Inspection" EntitySet="Inspection" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Car_InspectionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -112,10 +111,10 @@
           </Key>
           <Property Name="Car_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="State_number" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Engine_number" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Color" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Number_of_passport" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Engine_number" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Number_of_passport" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="OwnerID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Owner" Relationship="Self.FK_Car_Owner" FromRole="Car" ToRole="Owner" />
           <NavigationProperty Name="Inspection" Relationship="Self.FK_Inspection_Car" FromRole="Car" ToRole="Inspection" />
@@ -128,7 +127,7 @@
           <Property Name="CarID" Type="Int32" Nullable="false" />
           <Property Name="OfficerID" Type="Int32" Nullable="false" />
           <Property Name="Inspection_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Result" Type="String" MaxLength="250" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Result" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Car" Relationship="Self.FK_Inspection_Car" FromRole="Inspection" ToRole="Car" />
           <NavigationProperty Name="PoliceOfficer" Relationship="Self.FK_Inspection_PoliceOfficer" FromRole="Inspection" ToRole="PoliceOfficer" />
         </EntityType>
@@ -137,11 +136,11 @@
             <PropertyRef Name="Owner_id" />
           </Key>
           <Property Name="Owner_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="License_number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="FIO" Type="String" MaxLength="75" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Adress" Type="String" MaxLength="75" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="License_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FIO" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adress" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Birth_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Car" Relationship="Self.FK_Car_Owner" FromRole="Owner" ToRole="Car" />
         </EntityType>
         <EntityType Name="PoliceOfficer">
@@ -149,9 +148,9 @@
             <PropertyRef Name="Officer_id" />
           </Key>
           <Property Name="Officer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FIO" Type="String" MaxLength="75" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Post" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Rank" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FIO" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rank" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Inspection" Relationship="Self.FK_Inspection_PoliceOfficer" FromRole="PoliceOfficer" ToRole="Inspection" />
         </EntityType>
         <Association Name="FK_Car_Owner">

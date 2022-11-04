@@ -13,6 +13,27 @@
             <RowDefinition Height="60*"/>
         </Grid.RowDefinitions>
         <Rectangle HorizontalAlignment="Stretch" Fill ="#FF44EF89" VerticalAlignment="Stretch" Grid.Row="0"/>
+
+        <DataGrid x:Name="CarDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" FontFamily="Times New Roman" FontWeight="Bold" CanUserReorderColumns="False" CanUserResizeColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код автомобиля" Binding="{Binding Car_id}"/>
+                <DataGridTextColumn Header="Гос. номер" Binding="{Binding State_number}"/>
+                <DataGridTextColumn Header="Номер двигателя" Binding="{Binding Engine_number}"/>
+                <DataGridTextColumn Header="Цвет" Binding="{Binding Color}"/>
+                <DataGridTextColumn Header="Марка" Binding="{Binding Brand}"/>
+                <DataGridTextColumn Header="Номер тех. паспорта" Binding="{Binding Number_of_passport}"/>
+                <DataGridTemplateColumn Header="Код владельца">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button Content="{Binding OwnerID}" Background="#0000" Click="ShowOwnerData_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
         <Rectangle HorizontalAlignment="Stretch" Fill ="#FF44EF89" VerticalAlignment="Stretch" Grid.Row="3"/>
         <Button x:Name="BackToMain" Content="назад" VerticalAlignment="Center" Height="30" Width="90" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Background="#FF3ABAD8" Click="BackToMain_Click" Grid.Row="2" Margin="0,0,20,0" HorizontalAlignment="Right">
             <Button.Resources>
@@ -21,5 +42,6 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <TextBlock TextWrapping="Wrap" Text="СПИСОК ДАННЫХ АВТОМОБИЛЕЙ" FontFamily="Times New Roman" FontSize="24" FontWeight="Bold" TextAlignment="Left" VerticalAlignment="Center" Margin="50,0,50,0" Height="30"/>
     </Grid>
 </Window>

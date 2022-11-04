@@ -24,12 +24,24 @@ namespace Car_Inspection
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Кнопка перехода в окно InspectionData
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void ToInspectionForm_Click(object sender, RoutedEventArgs e)
         {
             InspectionData inspectionData = new InspectionData();
             this.Close();
             inspectionData.ShowDialog();            
         }
+
+        /// <summary>
+        /// Кнопка перехода в окно CarData
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void ToCarData_Click(object sender, RoutedEventArgs e)
         {

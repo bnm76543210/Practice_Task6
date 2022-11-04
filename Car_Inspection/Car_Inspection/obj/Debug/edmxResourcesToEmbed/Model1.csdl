@@ -6,10 +6,10 @@
     </Key>
     <Property Name="Car_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="State_number" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Engine_number" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Color" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Brand" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Number_of_passport" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Engine_number" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number_of_passport" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="OwnerID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Owner" Relationship="Self.FK_Car_Owner" FromRole="Car" ToRole="Owner" />
     <NavigationProperty Name="Inspection" Relationship="Self.FK_Inspection_Car" FromRole="Car" ToRole="Inspection" />
@@ -22,7 +22,7 @@
     <Property Name="CarID" Type="Int32" Nullable="false" />
     <Property Name="OfficerID" Type="Int32" Nullable="false" />
     <Property Name="Inspection_date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Result" Type="String" MaxLength="250" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Result" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Car" Relationship="Self.FK_Inspection_Car" FromRole="Inspection" ToRole="Car" />
     <NavigationProperty Name="PoliceOfficer" Relationship="Self.FK_Inspection_PoliceOfficer" FromRole="Inspection" ToRole="PoliceOfficer" />
   </EntityType>
@@ -31,11 +31,11 @@
       <PropertyRef Name="Owner_id" />
     </Key>
     <Property Name="Owner_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="License_number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="FIO" Type="String" MaxLength="75" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Adress" Type="String" MaxLength="75" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="License_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FIO" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Adress" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Birth_date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Car" Relationship="Self.FK_Car_Owner" FromRole="Owner" ToRole="Car" />
   </EntityType>
   <EntityType Name="PoliceOfficer">
@@ -43,9 +43,9 @@
       <PropertyRef Name="Officer_id" />
     </Key>
     <Property Name="Officer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FIO" Type="String" MaxLength="75" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Post" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Rank" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="FIO" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rank" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Inspection" Relationship="Self.FK_Inspection_PoliceOfficer" FromRole="PoliceOfficer" ToRole="Inspection" />
   </EntityType>
   <Association Name="FK_Car_Owner">
