@@ -90,7 +90,7 @@
     <Compile Include="Car.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="CarData.xaml.cs">
+    <Compile Include="Windows\CarData.xaml.cs">
       <DependentUpon>CarData.xaml</DependentUpon>
     </Compile>
     <Compile Include="Car_InspectionDataSet.Designer.cs">
@@ -98,7 +98,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Car_InspectionDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="EditWindow.xaml.cs">
+    <Compile Include="Windows\EditWindow.xaml.cs">
       <DependentUpon>EditWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Inspection.cs">
@@ -106,10 +106,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InspectionData.xaml.cs">
+    <Compile Include="Windows\InspectionData.xaml.cs">
       <DependentUpon>InspectionData.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
@@ -213,19 +213,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="CarData.xaml">
+    <Page Include="Windows\CarData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditWindow.xaml">
+    <Page Include="Windows\EditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InspectionData.xaml">
+    <Page Include="Windows\InspectionData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
