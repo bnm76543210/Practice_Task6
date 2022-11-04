@@ -239,9 +239,9 @@ namespace Car_Inspection
                         {
                             CountOfRepeatsDate++;
                         }
-                        if (CountOfRepeatsDate > 9)
+                        if ((CountOfRepeatsDate > 9 && AddData.Content.ToString() != "Изменить") || (CountOfRepeatsDate > 10 && AddData.Content.ToString() == "Изменить" && Convert.ToDateTime(DateText.Text) == inspection1.Inspection_date))
                         {
-                            MessageBox.Show("Этот сотрудник ГАИ уже совершил более 10 проверок за этот день!" + InspectorID.ToString());
+                            MessageBox.Show("Этот сотрудник ГАИ уже совершил более 10 проверок за этот день!" + CountOfRepeatsDate.ToString());
                             return;
                         }
                         else
@@ -249,7 +249,6 @@ namespace Car_Inspection
                             inspection.Inspection_date = Convert.ToDateTime(DateText.Text);
                         }
                     }
-
                 }
                 else
                 {
